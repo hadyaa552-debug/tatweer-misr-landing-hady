@@ -14,7 +14,7 @@ import Footer from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden">
       <Header />
       <Hero />
       <BloomfieldsOverview />
@@ -23,28 +23,33 @@ export default function Home() {
       <BloomfieldsAmenities />
       <BloomfieldsGallery />
       <BloomfieldsPayment />
+      
+      {/* سيكشن التواصل الأخير المطور */}
       <section 
         id="contact" 
         className="py-20 lg:py-32 relative bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/ilmonte/villa-1.webp')" }}
+        // تم تصحيح المسار ليكون داخل images مباشرة
+        style={{ backgroundImage: "url('/images/villa-1.webp')" }}
       >
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/75" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">تواصل معنا</h2>
-              <p className="text-lg text-white/90">
-                اتصل بنا الآن للحصول على أفضل العروض والأسعار الحصرية لـ IL Monte Galala
-              </p>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">هل لديك أي استفسار؟</h2>
+            <p className="text-xl text-white/90 mb-10">
+              فريق مبيعات مشروع المونت جلالة جاهز للرد على جميع استفساراتكم بخصوص المساحات المتاحة وأحدث الأسعار
+            </p>
+            <div className="flex justify-center">
+              <ContactButtons />
             </div>
-            <ContactButtons />
           </div>
         </div>
       </section>
+
       <AboutDeveloper />
       <Footer />
+      
+      {/* أدوات التواصل العائمة */}
       <WhatsAppWidget />
       <MobileBottomBar />
     </main>
