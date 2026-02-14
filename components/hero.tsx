@@ -102,7 +102,7 @@ export default function Hero() {
                 >
                   <Phone className="w-7 h-7" />
                   <div className="text-center">
-                    <div>اتصال مباشر</div>
+                    <div>تواصل معنا</div>
                     <div className="text-sm font-normal opacity-90">{displayNumber}</div>
                   </div>
                 </button>
