@@ -5,7 +5,8 @@ import { Phone, MessageCircle } from "lucide-react"
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false)
-  const phoneNumber = "201070752370"
+  // تم تعديل الرقم ليقبل الاتصال الدولي والمحلي فوراً
+  const phoneNumber = "+201070752370"
   const displayNumber = "01070752370"
 
   useEffect(() => {
@@ -14,7 +15,7 @@ export default function Hero() {
 
   const handleWhatsApp = () => {
     const message = encodeURIComponent("مرحباً، أريد الاستفسار عن IL Monte Galala")
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank')
+    window.open(`https://wa.me/201070752370?text=${message}`, '_blank')
   }
 
   const handleCall = () => {
@@ -24,7 +25,8 @@ export default function Hero() {
   return (
     <section 
       className="relative pt-20 min-h-screen bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/ilmonte/aerial-sunset.webp')" }}
+      // تم تعديل المسار ليكون مباشر داخل images كما في ملفاتك
+      style={{ backgroundImage: "url('/images/WhatsApp-Image-2026-02-08-at-23.59.18.jpeg')" }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/70" />
@@ -80,7 +82,7 @@ export default function Hero() {
               <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 space-y-6">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">تواصل معنا الآن</h3>
-                  <p className="text-gray-600">اختر طريقة التواصل المناسبة</p>
+                  <p className="text-gray-600">احجز وحدتك بأفضل سعر اليوم</p>
                 </div>
 
                 {/* زر واتساب */}
@@ -89,8 +91,8 @@ export default function Hero() {
                   className="w-full h-16 bg-green-500 hover:bg-green-600 text-white font-bold text-xl rounded-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] flex items-center justify-center gap-4"
                 >
                   <MessageCircle className="w-7 h-7" />
-                  <div className="text-center">
-                    <div>واتساب</div>
+                  <div className="text-right">
+                    <div className="text-lg">واتساب</div>
                     <div className="text-sm font-normal opacity-90">{displayNumber}</div>
                   </div>
                 </button>
@@ -98,18 +100,18 @@ export default function Hero() {
                 {/* زر اتصال */}
                 <button
                   onClick={handleCall}
-                  className="w-full h-16 bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl rounded-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] flex items-center justify-center gap-4"
+                  className="w-full h-16 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xl rounded-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] flex items-center justify-center gap-4"
                 >
                   <Phone className="w-7 h-7" />
-                  <div className="text-center">
-                    <div>اتصال مباشر</div>
+                  <div className="text-right">
+                    <div className="text-lg">اتصال مباشر</div>
                     <div className="text-sm font-normal opacity-90">{displayNumber}</div>
                   </div>
                 </button>
 
                 <div className="text-center pt-4 border-t border-gray-200">
-                  <p className="text-sm text-gray-600">
-                    🔥 <strong>عروض حصرية</strong> - اتصل الآن للحصول على أفضل الأسعار
+                  <p className="text-sm text-gray-600 font-medium">
+                    📍 جبل الجلالة - العين السخنة
                   </p>
                 </div>
               </div>
