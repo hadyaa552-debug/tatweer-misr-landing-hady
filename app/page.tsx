@@ -6,7 +6,7 @@ import BloomfieldsUnits from "@/components/bloomfields-units"
 import BloomfieldsAmenities from "@/components/bloomfields-amenities"
 import BloomfieldsPayment from "@/components/bloomfields-payment"
 import BloomfieldsGallery from "@/components/bloomfields-gallery"
-import ContactForm from "@/components/contact-form"
+import ContactButtons from "@/components/contact-buttons"
 import AboutDeveloper from "@/components/about-developer"
 import WhatsAppWidget from "@/components/whatsapp-widget"
 import MobileBottomBar from "@/components/mobile-bottom-bar"
@@ -36,10 +36,10 @@ export default function Home() {
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">تواصل معنا</h2>
               <p className="text-lg text-white/90">
-                املأ النموذج وسيتواصل معك فريقنا في أقرب وقت للإجابة على جميع استفساراتك حول IL Monte Galala
+                اتصل بنا الآن للحصول على أفضل العروض والأسعار الحصرية لـ IL Monte Galala
               </p>
             </div>
-            <ContactForm />
+            <ContactButtons />
           </div>
         </div>
       </section>
