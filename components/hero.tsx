@@ -1,14 +1,25 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import ContactForm from "@/components/contact-form"
+import { Phone, MessageCircle } from "lucide-react"
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false)
+  const phoneNumber = "201070752370"
+  const displayNumber = "01070752370"
 
   useEffect(() => {
     setIsVisible(true)
   }, [])
+
+  const handleWhatsApp = () => {
+    const message = encodeURIComponent("مرحباً، أريد الاستفسار عن IL Monte Galala")
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank')
+  }
+
+  const handleCall = () => {
+    window.location.href = `tel:${phoneNumber}`
+  }
 
   return (
     <section 
@@ -60,13 +71,48 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Column - Form */}
+        {/* Right Column - Contact Buttons */}
         <div className="relative flex items-center justify-center">
           <div className="relative z-10 w-full max-w-lg mx-auto px-4 lg:px-8 py-12 lg:py-20">
             <div
               className={`transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
             >
-              <ContactForm />
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 space-y-6">
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">تواصل معنا الآن</h3>
+                  <p className="text-gray-600">اختر طريقة التواصل المناسبة</p>
+                </div>
+
+                {/* زر واتساب */}
+                <button
+                  onClick={handleWhatsApp}
+                  className="w-full h-16 bg-green-500 hover:bg-green-600 text-white font-bold text-xl rounded-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] flex items-center justify-center gap-4"
+                >
+                  <MessageCircle className="w-7 h-7" />
+                  <div className="text-center">
+                    <div>واتساب</div>
+                    <div className="text-sm font-normal opacity-90">{displayNumber}</div>
+                  </div>
+                </button>
+
+                {/* زر اتصال */}
+                <button
+                  onClick={handleCall}
+                  className="w-full h-16 bg-blue-500 hover:bg-blue-600 text-white font-bold text-xl rounded-xl transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] flex items-center justify-center gap-4"
+                >
+                  <Phone className="w-7 h-7" />
+                  <div className="text-center">
+                    <div>اتصال مباشر</div>
+                    <div className="text-sm font-normal opacity-90">{displayNumber}</div>
+                  </div>
+                </button>
+
+                <div className="text-center pt-4 border-t border-gray-200">
+                  <p className="text-sm text-gray-600">
+                    🔥 <strong>عروض حصرية</strong> - اتصل الآن للحصول على أفضل الأسعار
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
